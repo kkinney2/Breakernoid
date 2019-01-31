@@ -1,0 +1,152 @@
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.dll.config
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x86/SDL2.dll
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x64/SDL2.dll
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x86/soft_oal.dll
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x64/soft_oal.dll
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x86/libSDL2-2.0.so.0
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x64/libSDL2-2.0.so.0
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x86/libopenal.so.1
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x64/libopenal.so.1
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/libSDL2-2.0.0.dylib
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/libopenal.1.dylib
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/BreakernoidsGL.exe
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/BreakernoidsGL.pdb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.dll
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/obj/Debug/BreakernoidsGL.csprojAssemblyReference.cache
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/obj/Debug/BreakernoidsGL.csproj.CoreCompileInputs.cache
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/obj/Debug/BreakernoidsGL.csproj.CopyComplete
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/obj/Debug/BreakernoidsGL.exe
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/obj/Debug/BreakernoidsGL.pdb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/ball.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/ball_bounce.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/ball_hit.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/bg.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_blue.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_green.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_grey.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_grey_hi.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_purple.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_red.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_yellow.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/death.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/main_font.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/paddle.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/paddle_long.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/powerup.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/powerup_b.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/powerup_c.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/powerup_p.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x86/SDL2.dll
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x64/SDL2.dll
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x86/soft_oal.dll
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x64/soft_oal.dll
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x86/libSDL2-2.0.so.0
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x64/libSDL2-2.0.so.0
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x86/libopenal.so.1
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x64/libopenal.so.1
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/libSDL2-2.0.0.dylib
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/libopenal.1.dylib
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.dll.config
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/ball.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/ball_bounce.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/ball_hit.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/bg.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_blue.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_green.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_grey.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_grey_hi.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_purple.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_red.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_yellow.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/death.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/main_font.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/paddle.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/paddle_long.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/powerup.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/powerup_b.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/powerup_c.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/powerup_p.xnb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/BreakernoidsGL.exe
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/BreakernoidsGL.pdb
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.dll
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/obj/Debug/BreakernoidsGL.csprojAssemblyReference.cache
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/obj/Debug/BreakernoidsGL.csproj.CoreCompileInputs.cache
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/obj/Debug/BreakernoidsGL.csproj.CopyComplete
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/obj/Debug/BreakernoidsGL.exe
+C:/Users/jwarmouth/Desktop/Game Programming/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/obj/Debug/BreakernoidsGL.pdb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x86/SDL2.dll
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x64/SDL2.dll
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x86/soft_oal.dll
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x64/soft_oal.dll
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x86/libSDL2-2.0.so.0
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x64/libSDL2-2.0.so.0
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x86/libopenal.so.1
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/x64/libopenal.so.1
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/libSDL2-2.0.0.dylib
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/libopenal.1.dylib
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.dll.config
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/ball.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/ball_bounce.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/ball_hit.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/bg.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_blue.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_green.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_grey.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_grey_hi.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_purple.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_red.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/block_yellow.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/death.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/main_font.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/paddle.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/paddle_long.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/powerup.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/powerup_b.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/powerup_c.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/Content/powerup_p.xnb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/BreakernoidsGL.exe
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/BreakernoidsGL.pdb
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.dll
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/bin/DesktopGL/AnyCPU/Debug/MonoGame.Framework.xml
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/obj/Debug/BreakernoidsGL.csprojAssemblyReference.cache
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/obj/Debug/BreakernoidsGL.csproj.CoreCompileInputs.cache
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/obj/Debug/BreakernoidsGL.csproj.CopyComplete
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/obj/Debug/BreakernoidsGL.exe
+/Jeffu Documents/FITCHBURG/GAME DESIGN/2019 Sp Game Prog/Programming Projects/BreakernoidStart/BreakernoidsGL/BreakernoidsGL/obj/Debug/BreakernoidsGL.pdb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\x86\SDL2.dll
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\x64\SDL2.dll
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\x86\soft_oal.dll
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\x64\soft_oal.dll
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\x86\libSDL2-2.0.so.0
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\x64\libSDL2-2.0.so.0
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\x86\libopenal.so.1
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\x64\libopenal.so.1
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\libSDL2-2.0.0.dylib
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\libopenal.1.dylib
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll.config
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\ball.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\ball_bounce.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\ball_hit.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\bg.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\block_blue.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\block_green.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\block_grey.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\block_grey_hi.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\block_purple.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\block_red.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\block_yellow.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\death.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\main_font.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\paddle.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\paddle_long.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\powerup.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\powerup_b.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\powerup_c.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\powerup_p.xnb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\BreakernoidsGL.exe
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\BreakernoidsGL.pdb
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\obj\Debug\BreakernoidsGL.csprojResolveAssemblyReference.cache
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\obj\Debug\BreakernoidsGL.csproj.CoreCompileInputs.cache
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\obj\Debug\BreakernoidsGL.exe
+J:\Game Programming\BreakernoidsStart_Fix\BreakernoidsGL\BreakernoidsGL\obj\Debug\BreakernoidsGL.pdb
