@@ -12,7 +12,7 @@ namespace BreakernoidsGL
 {
     public class Paddle : GameObject
     {
-        public float speed;
+        public float speed = 500;
 
         public Paddle(Game myGame) : base(myGame)
         {
@@ -21,8 +21,6 @@ namespace BreakernoidsGL
 
         public override void Update(float deltaTime)
         {
-            base.Update(deltaTime);
-
             KeyboardState keyState = Keyboard.GetState();
 
             if (keyState.IsKeyDown(Keys.Left))
@@ -33,6 +31,17 @@ namespace BreakernoidsGL
             {
                 position.X += speed * deltaTime;
             }
+
+            position.X = MathHelper.Clamp
+                (
+                    position.X,
+                    32 + texture.Width / 2,
+                    992 - texture.Width / 2
+                );
+
+            base.Update(deltaTime);
+
+            
         }
     }
 }

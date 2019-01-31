@@ -19,6 +19,7 @@ namespace BreakernoidsGL
         SpriteBatch spriteBatch;
         Texture2D bgTexture;
         Paddle paddle;
+        Ball ball;
         
         public Game1()
         {
@@ -58,6 +59,10 @@ namespace BreakernoidsGL
             paddle.LoadContent();
             paddle.position = new Vector2(512, 740);
 
+            ball = new Ball(this);
+            ball.LoadContent();
+            ball.position = new Vector2(512, 740);
+
         }
 
         /// <summary>
@@ -82,6 +87,9 @@ namespace BreakernoidsGL
             // TODO: Add your update logic here
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             paddle.Update(deltaTime);
+            ball.Update(deltaTime);
+
+            CheckCollisions()
 
             base.Update(gameTime);
         }
@@ -101,9 +109,30 @@ namespace BreakernoidsGL
             // Draw all sprites 
             spriteBatch.Draw(bgTexture, new Vector2(0, 0), Color.White);
             paddle.Draw(spriteBatch);
+            ball.Draw(spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        protected void CheckCollisions()
+        {
+            float radius = ball.Width / 2;
+            if (Math.Abs(ball.position.X - 32) < radius)
+            {
+                // Left wall collision
+                ball.position.X = -ball.position.X;
+            }
+            else if (Math.Abs(ball.position.X - 992) < radius)
+            {
+                // Right wall collision
+                ball.position.X = -ball.position.X;
+            }
+            else if( Math.Abs(ball.position.Y - 32) < radius)
+            {
+                // Ceiling collision
+                ball.position.Y = -ball.position.Y;
+            }
         }
         
     }

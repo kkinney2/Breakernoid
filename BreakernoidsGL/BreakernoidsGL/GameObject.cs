@@ -46,5 +46,15 @@ namespace BreakernoidsGL
                 batch.Draw(texture, drawPosition, Color.White);
             }
         }
+
+        public float Width
+        {
+            get { return texture.Width; }
+        }
+
+        public float Height
+        {
+            get { return texture.Height; }
+        }
     }
 }
