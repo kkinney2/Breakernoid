@@ -18,6 +18,7 @@ namespace BreakernoidsGL
         public Ball(Game myGame) : base(myGame)
         {
             textureName = "ball";
+
         }
 
         public override void Update(float deltaTime)

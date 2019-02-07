@@ -20,6 +20,8 @@ namespace BreakernoidsGL
         Texture2D bgTexture;
         Paddle paddle;
         Ball ball;
+        private int collisionCount = 0;
+        List<Block> blocks = new List<Block>();
         
         public Game1()
         {
@@ -63,6 +65,14 @@ namespace BreakernoidsGL
             ball.LoadContent();
             ball.position = new Vector2(512, 740);
 
+            for (int i = 0; i < 15; i++)
+            {
+                Block tempBlock = new Block(this);
+                tempBlock.LoadContent();
+                tempBlock.position = new Vector2(64 + i * 64, 200);
+                blocks.Add(tempBlock);
+            }
+
         }
 
         /// <summary>
@@ -89,7 +99,7 @@ namespace BreakernoidsGL
             paddle.Update(deltaTime);
             ball.Update(deltaTime);
 
-            CheckCollisions()
+            CheckCollisions();
 
             base.Update(gameTime);
         }
@@ -110,6 +120,10 @@ namespace BreakernoidsGL
             spriteBatch.Draw(bgTexture, new Vector2(0, 0), Color.White);
             paddle.Draw(spriteBatch);
             ball.Draw(spriteBatch);
+            foreach (Block b in blocks)
+            {
+                b.Draw(spriteBatch);
+            }
             spriteBatch.End();
 
             base.Draw(gameTime);
@@ -118,21 +132,73 @@ namespace BreakernoidsGL
         protected void CheckCollisions()
         {
             float radius = ball.Width / 2;
+
+            if (collisionCount == 0)
+            {
+                if ((ball.position.X > (paddle.position.X - radius - paddle.Width / 2)) &&  // Left Check
+
+                (ball.position.X < (paddle.position.X + radius + paddle.Width / 2)) &&      // Right Check
+
+                (ball.position.Y < paddle.position.Y) &&                                    // Top Check
+
+                (ball.position.Y > (paddle.position.Y - radius - paddle.Height / 2)))       // Bottom Check
+                {
+                                                                                                                  // Paddle Bounds
+                    // Right 1/3 of paddle
+                    if (ball.position.X < (paddle.position.X + paddle.Width / 2) &&                               // Right paddle bound
+                     ball.position.X > (paddle.position.X + paddle.Width / 2 - paddle.Width / 3))                 // Right Inner Third
+                    {
+                        ball.direction = Vector2.Reflect(ball.direction, new Vector2(0.196f, -0.981f));
+                    }
+
+                    // Center 1/3 of paddle
+                    else if (ball.position.X > (paddle.position.X - paddle.Width / 2 + paddle.Width / 3) &&             // Middle Left Bound
+                        ball.position.X < (paddle.position.X + paddle.Width / 2 - paddle.Width / 3))               // Middle Right Bound
+                    {
+                        ball.direction = Vector2.Reflect(ball.direction, new Vector2(0, -1));
+                    }
+
+                    // Left 1/3 of paddle
+                    else if (ball.position.X > paddle.position.X - paddle.Width / 2 &&                                  // Left paddle bound
+                        ball.position.X < (paddle.position.X - paddle.Width / 2 + paddle.Width / 3))               // Left Inner Third
+                    {
+                        ball.direction = Vector2.Reflect(ball.direction, new Vector2(-0.196f, -0.981f));
+                    }
+                    collisionCount = 20;
+                }
+            }
+
+            if (collisionCount > 0)
+            {
+                collisionCount--;
+            }
+
             if (Math.Abs(ball.position.X - 32) < radius)
             {
                 // Left wall collision
-                ball.position.X = -ball.position.X;
+                ball.direction.X = -ball.direction.X;
             }
             else if (Math.Abs(ball.position.X - 992) < radius)
             {
                 // Right wall collision
-                ball.position.X = -ball.position.X;
+                ball.direction.X = -ball.direction.X;
             }
             else if( Math.Abs(ball.position.Y - 32) < radius)
             {
                 // Ceiling collision
-                ball.position.Y = -ball.position.Y;
+                ball.direction.Y = -ball.direction.Y;
             }
+            else if (ball.position.Y > 768 + radius)
+            {
+                // "Bottom Out"
+                LoseLife();
+            }
+        }
+
+        void LoseLife()
+        {
+            paddle.position = new Vector2(512, 740);
+            ball.position = new Vector2(paddle.position.X, paddle.position.Y - ball.Height - paddle.Height);
         }
         
     }
