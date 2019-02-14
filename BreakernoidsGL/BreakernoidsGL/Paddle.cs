@@ -40,8 +40,11 @@ namespace BreakernoidsGL
                 );
 
             base.Update(deltaTime);
+        }
 
-            
+        public void ResetPosition()
+        {
+            position = new Vector2(512, 740);
         }
     }
 }

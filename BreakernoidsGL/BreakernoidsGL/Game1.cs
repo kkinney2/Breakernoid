@@ -136,15 +136,15 @@ namespace BreakernoidsGL
             // Paddle Collisions
             if (collisionCount == 0)
             {
-                if ((ball.position.X > (paddle.position.X - radius - paddle.Width / 2)) &&  // Left Check
+                if ((ball.position.X > (paddle.position.X - radius - paddle.Width / 2)) &&      // Left Check
 
-                (ball.position.X < (paddle.position.X + radius + paddle.Width / 2)) &&      // Right Check
+                (ball.position.X < (paddle.position.X + radius + paddle.Width / 2))     &&      // Right Check
 
-                (ball.position.Y < paddle.position.Y) &&                                    // Top Check
+                (ball.position.Y < paddle.position.Y + radius + paddle.Height / 2)      &&      // Bottom Check
 
-                (ball.position.Y > (paddle.position.Y - radius - paddle.Height / 2)))       // Bottom Check
+                (ball.position.Y > (paddle.position.Y - radius - paddle.Height / 2))      )     // Top Check -- Pixel based game (0,0) is top left)
                 {
-                    // TODO: Y Boundaries of paddle                                                                                              // Paddle Bounds
+                                                                                                                  // Paddle Bounds
                     // Right 1/3 of paddle
                     if (ball.position.X < (paddle.position.X + paddle.Width / 2) &&                               // Right paddle bound
                         ball.position.X > (paddle.position.X + paddle.Width / 2 - paddle.Width / 3))              // Right Inner Third
@@ -200,26 +200,34 @@ namespace BreakernoidsGL
             // Block Collisions
             foreach (Block b in blocks)
             {
-                if(Math.Abs(ball.position.X - (b.position.X + b.Width / 2)) < radius && ball.position.Y //&& ball.position.Y is between block height)
+                if(ball.position.X - (b.position.X + b.Width / 2) < radius &&
+                  (ball.position.Y - radius) < (b.position.Y + b.Height / 2) &&
+                  (ball.position.Y + radius) < (b.position.Y - b.Height / 2))
                 {
                     // Left block side collision
                     ball.direction.X = -ball.direction.X;
                     break;
                 }
-                if(Math.Abs(ball.position.X - (b.position.X - b.Width / 2)) < radius )
+                if(ball.position.X - (b.position.X - b.Width / 2) < radius &&
+                  (ball.position.Y - radius) < (b.position.Y + b.Height / 2) &&
+                  (ball.position.Y + radius) < (b.position.Y - b.Height / 2))
                 {
                     // Right block side collision
                     ball.direction.X = -ball.direction.X;
                     break;
                 }
 
-                if(Math.Abs(ball.position.Y - (b.position.Y + b.Height / 2)) < radius)
+                if(ball.position.Y - (b.position.Y + b.Height / 2) < radius &&
+                   ball.position.X - (b.position.X + b.Width / 2) < radius &&
+                   ball.position.X - (b.position.X + b.Width / 2) < radius )
                 {
                     // Top block side collision
                     ball.direction.Y = -ball.direction.Y;
                     break;
                 }
-                if(Math.Abs(ball.position.Y - (b.position.Y - b.Height / 2)) < radius)
+                if(ball.position.Y - (b.position.Y - b.Height / 2) < radius &&
+                   ball.position.X - (b.position.X + b.Width / 2) < radius &&
+                   ball.position.X - (b.position.X + b.Width / 2) < radius)
                 {
                     // Bottom block side collision
                     ball.direction.Y = -ball.direction.Y;
@@ -230,8 +238,9 @@ namespace BreakernoidsGL
 
         void LoseLife()
         {
-            paddle.position = new Vector2(512, 740);
+            paddle.ResetPosition();
             ball.position = new Vector2(paddle.position.X, paddle.position.Y - ball.Height - paddle.Height);
+            ball.ResetDirection();
         }
         
     }

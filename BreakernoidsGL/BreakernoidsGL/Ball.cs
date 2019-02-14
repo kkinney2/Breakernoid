@@ -27,5 +27,10 @@ namespace BreakernoidsGL
 
             base.Update(deltaTime);
         }
+
+        public void ResetDirection()
+        {
+            direction = new Vector2(0.707f, -0.707f);
+        }
     }
 }

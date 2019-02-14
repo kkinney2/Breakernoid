@@ -12,10 +12,20 @@ namespace BreakernoidsGL
 {
     class Block : GameObject
     {
+        private bool isMarkedForRemoval;
+
         public Block(Game myGame) : base(myGame)
         {
             textureName = "block_red";
 
+            isMarkedForRemoval = false;
         }
+
+        public bool IsMarkedForRemoval()
+        {
+            return isMarkedForRemoval;
+        }
+
     }
+    
 }
