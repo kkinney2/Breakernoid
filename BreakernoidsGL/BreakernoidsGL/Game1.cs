@@ -22,7 +22,15 @@ namespace BreakernoidsGL
         Ball ball;
         private int collisionCount = 0;
         List<Block> blocks = new List<Block>();
-        
+        int[,] blockLayout = new int[,]{
+            {5,5,5,5,5,5,5,5,5,5,5,5,5,5,5},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+            {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
+            {3,3,3,3,3,3,3,3,3,3,3,3,3,3,3},
+            {4,4,4,4,4,4,4,4,4,4,4,4,4,4,4},
+        };
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -67,7 +75,7 @@ namespace BreakernoidsGL
 
             for (int i = 0; i < 15; i++)
             {
-                Block tempBlock = new Block(this);
+                Block tempBlock = new Block(BlockColor.Purple, this);
                 tempBlock.LoadContent();
                 tempBlock.position = new Vector2(64 + i * 64, 200);
                 blocks.Add(tempBlock);
@@ -200,40 +208,46 @@ namespace BreakernoidsGL
             // Block Collisions
             foreach (Block b in blocks)
             {
-                if(ball.position.X - (b.position.X + b.Width / 2) < radius &&
-                  (ball.position.Y - radius) < (b.position.Y + b.Height / 2) &&
-                  (ball.position.Y + radius) < (b.position.Y - b.Height / 2))
+                if ((ball.position.X > (b.position.X - b.Width / 2 - radius)) &&
+                    (ball.position.X < (b.position.X + b.Width / 2 + radius)) &&
+                    (ball.position.Y > (b.position.Y - b.Height / 2 - radius)) &&
+                    (ball.position.Y < (b.position.Y + b.Height / 2 + radius)))
                 {
-                    // Left block side collision
-                    ball.direction.X = -ball.direction.X;
-                    break;
-                }
-                if(ball.position.X - (b.position.X - b.Width / 2) < radius &&
-                  (ball.position.Y - radius) < (b.position.Y + b.Height / 2) &&
-                  (ball.position.Y + radius) < (b.position.Y - b.Height / 2))
-                {
-                    // Right block side collision
-                    ball.direction.X = -ball.direction.X;
-                    break;
-                }
+                    if ((b.position.X - b.Width / 2) > ball.position.X)
+                    {
+                        // Left block side collision
+                        ball.direction.X = -ball.direction.X;
+                        b.MarkForRemoval(true);
+                        continue;
+                    }
 
-                if(ball.position.Y - (b.position.Y + b.Height / 2) < radius &&
-                   ball.position.X - (b.position.X + b.Width / 2) < radius &&
-                   ball.position.X - (b.position.X + b.Width / 2) < radius )
-                {
-                    // Top block side collision
-                    ball.direction.Y = -ball.direction.Y;
-                    break;
-                }
-                if(ball.position.Y - (b.position.Y - b.Height / 2) < radius &&
-                   ball.position.X - (b.position.X + b.Width / 2) < radius &&
-                   ball.position.X - (b.position.X + b.Width / 2) < radius)
-                {
-                    // Bottom block side collision
-                    ball.direction.Y = -ball.direction.Y;
-                    break;
+
+                    if ((b.position.X + b.Width / 2) < ball.position.X)
+                    {
+                        // Right block side collision
+                        ball.direction.X = -ball.direction.X;
+                        b.MarkForRemoval(true);
+                        continue;
+                    }
+
+                    if ((b.position.Y + b.Height / 2) < ball.position.Y)
+                    {
+                        // Top block side collision
+                        ball.direction.Y = -ball.direction.Y;
+                        b.MarkForRemoval(true);
+                        continue;
+                    }
+
+                    if ((b.position.Y - b.Height / 2) > ball.position.Y)
+                    {
+                        // Bottom block side collision
+                        ball.direction.Y = -ball.direction.Y;
+                        b.MarkForRemoval(true);
+                        continue;
+                    }
                 }
             }
+            RemoveBlocks();
         }
 
         void LoseLife()
@@ -241,6 +255,17 @@ namespace BreakernoidsGL
             paddle.ResetPosition();
             ball.position = new Vector2(paddle.position.X, paddle.position.Y - ball.Height - paddle.Height);
             ball.ResetDirection();
+        }
+
+        void RemoveBlocks()
+        {
+            for (int b = blocks.Count-1; b > 0; b--)
+            {
+                if(blocks[b].IsMarkedForRemoval() == true)
+                {
+                    blocks.Remove(blocks[b]);
+                }
+            }
         }
         
     }

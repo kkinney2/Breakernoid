@@ -187,3 +187,41 @@ J:\Game Programming\Breakernoid\BreakernoidsGL\BreakernoidsGL\obj\Debug\Breakern
 J:\Game Programming\Breakernoid\BreakernoidsGL\BreakernoidsGL\obj\Debug\BreakernoidsGL.csproj.CoreCompileInputs.cache
 J:\Game Programming\Breakernoid\BreakernoidsGL\BreakernoidsGL\obj\Debug\BreakernoidsGL.exe
 J:\Game Programming\Breakernoid\BreakernoidsGL\BreakernoidsGL\obj\Debug\BreakernoidsGL.pdb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\x86\SDL2.dll
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\x64\SDL2.dll
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\x86\soft_oal.dll
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\x64\soft_oal.dll
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\x86\libSDL2-2.0.so.0
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\x64\libSDL2-2.0.so.0
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\x86\libopenal.so.1
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\x64\libopenal.so.1
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\libSDL2-2.0.0.dylib
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\libopenal.1.dylib
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll.config
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\ball.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\ball_bounce.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\ball_hit.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\bg.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\block_blue.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\block_green.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\block_grey.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\block_grey_hi.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\block_purple.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\block_red.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\block_yellow.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\death.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\main_font.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\paddle.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\paddle_long.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\powerup.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\powerup_b.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\powerup_c.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Content\powerup_p.xnb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\BreakernoidsGL.exe
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\BreakernoidsGL.pdb
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\obj\Debug\BreakernoidsGL.csprojAssemblyReference.cache
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\obj\Debug\BreakernoidsGL.csproj.CoreCompileInputs.cache
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\obj\Debug\BreakernoidsGL.csproj.CopyComplete
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\obj\Debug\BreakernoidsGL.exe
+D:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\obj\Debug\BreakernoidsGL.pdb
