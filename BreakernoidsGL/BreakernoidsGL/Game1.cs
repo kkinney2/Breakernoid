@@ -129,8 +129,15 @@ namespace BreakernoidsGL
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             paddle.Update(deltaTime);
             ball.Update(deltaTime);
-
+            foreach (PowerUp pu in powerUps)
+            {
+                pu.Update(deltaTime);
+            }
+            
             CheckCollisions();
+
+            RemoveBlocks();
+            RemovePowerUps();
 
             base.Update(gameTime);
         }
@@ -156,6 +163,11 @@ namespace BreakernoidsGL
                 b.Draw(spriteBatch);
             }
             spriteBatch.End();
+
+            foreach (PowerUp pu in powerUps)
+            {
+                pu.Draw(spriteBatch);
+            }
 
             base.Draw(gameTime);
         }
@@ -252,7 +264,7 @@ namespace BreakernoidsGL
 
                         if (b.OnHit() == false) // Case False: Means that block does not get destroyed(Color is GreyHi), change color to Grey
                         {
-                            b.ChangeColor(BlockColor.Blue);
+                            b.ChangeColor(BlockColor.Grey);
                             b.LoadContent();
                         }
                         else
@@ -270,7 +282,7 @@ namespace BreakernoidsGL
 
                         if (b.OnHit() == false) // Case False: Means that block does not get destroyed(Color is GreyHi), change color to Grey
                         {
-                            b.ChangeColor(BlockColor.Blue);
+                            b.ChangeColor(BlockColor.Grey);
                             b.LoadContent();
                         }
                         else
@@ -287,7 +299,7 @@ namespace BreakernoidsGL
 
                         if (b.OnHit() == false) // Case False: Means that block does not get destroyed(Color is GreyHi), change color to Grey
                         {
-                            b.ChangeColor(BlockColor.Blue);
+                            b.ChangeColor(BlockColor.Grey);
                             b.LoadContent();
                         }
                         else
@@ -304,7 +316,7 @@ namespace BreakernoidsGL
 
                         if (b.OnHit() == false) // Case False: Means that block does not get destroyed(Color is GreyHi), change color to Grey
                         {
-                            b.ChangeColor(BlockColor.Blue);
+                            b.ChangeColor(BlockColor.Grey);
                             b.LoadContent();
                         }
                         else
@@ -315,7 +327,6 @@ namespace BreakernoidsGL
                     }
                 }
             }
-            RemoveBlocks();
         }
 
         void LoseLife()
@@ -339,6 +350,17 @@ namespace BreakernoidsGL
                     }
 
                     blocks.Remove(blocks[b]);
+                }
+            }
+        }
+
+        void RemovePowerUps()
+        {
+            for (int pu = powerUps.Count - 1; pu > 0; pu--)
+            {
+                if (powerUps[pu].IsMarkedForRemoval() == true)
+                {
+                    powerUps.Remove(powerUps[pu]);
                 }
             }
         }

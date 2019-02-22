@@ -20,17 +20,38 @@ namespace BreakernoidsGL
     class PowerUp : GameObject
     {
         public float speed = 350;
+        private bool isMarkedForRemoval;
+        PowerUpType puType;
 
         public PowerUp(PowerUpType powerupType , Game myGame) : base(myGame)
         {
-            
+            puType = powerupType;
+
+
         }
 
         public override void Update(float deltaTime)
         {
-            position.Y +=  speed * deltaTime;
+            if( position.Y < 768)
+            {
+                position.Y += speed * deltaTime;
 
-            base.Update(deltaTime);
+                base.Update(deltaTime);
+            }
+            else
+            {
+                MarkForRemoval(true);
+            }
+        }
+
+        public bool IsMarkedForRemoval()
+        {
+            return isMarkedForRemoval;
+        }
+
+        public void MarkForRemoval(bool newMark)
+        {
+            isMarkedForRemoval = newMark;
         }
     }
 
