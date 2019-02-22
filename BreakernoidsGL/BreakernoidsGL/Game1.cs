@@ -73,12 +73,23 @@ namespace BreakernoidsGL
             ball.LoadContent();
             ball.position = new Vector2(512, 740);
 
-            for (int i = 0; i < 15; i++)
+            /*for (int i = 0; i < 15; i++)
             {
                 Block tempBlock = new Block(BlockColor.Purple, this);
                 tempBlock.LoadContent();
                 tempBlock.position = new Vector2(64 + i * 64, 200);
                 blocks.Add(tempBlock);
+            }*/
+
+            for (int row = 0; row < blockLayout.GetLength(0); row++)
+            {
+                for (int col = 0; col < blockLayout.GetLength(1) ; col++)
+                {
+                    Block tempBlock = new Block((BlockColor)blockLayout[row, col], this);
+                    tempBlock.LoadContent();
+                    tempBlock.position = new Vector2(64 + col * 64, 100 + row * 32);
+                    blocks.Add(tempBlock);
+                }
             }
 
         }
@@ -217,7 +228,16 @@ namespace BreakernoidsGL
                     {
                         // Left block side collision
                         ball.direction.X = -ball.direction.X;
-                        b.MarkForRemoval(true);
+                        
+                        if(b.OnHit() == false) // Case False: Means that block does not get destroyed(Color is GreyHi), change color to Grey
+                        {
+                            b.ChangeColor(BlockColor.Blue);
+                            b.LoadContent();
+                        }
+                        else
+                        {
+                            b.MarkForRemoval(true);
+                        }
                         continue;
                     }
 
@@ -226,7 +246,16 @@ namespace BreakernoidsGL
                     {
                         // Right block side collision
                         ball.direction.X = -ball.direction.X;
-                        b.MarkForRemoval(true);
+
+                        if (b.OnHit() == false) // Case False: Means that block does not get destroyed(Color is GreyHi), change color to Grey
+                        {
+                            b.ChangeColor(BlockColor.Blue);
+                            b.LoadContent();
+                        }
+                        else
+                        {
+                            b.MarkForRemoval(true);
+                        }
                         continue;
                     }
 
@@ -234,7 +263,16 @@ namespace BreakernoidsGL
                     {
                         // Top block side collision
                         ball.direction.Y = -ball.direction.Y;
-                        b.MarkForRemoval(true);
+
+                        if (b.OnHit() == false) // Case False: Means that block does not get destroyed(Color is GreyHi), change color to Grey
+                        {
+                            b.ChangeColor(BlockColor.Blue);
+                            b.LoadContent();
+                        }
+                        else
+                        {
+                            b.MarkForRemoval(true);
+                        }
                         continue;
                     }
 
@@ -242,7 +280,16 @@ namespace BreakernoidsGL
                     {
                         // Bottom block side collision
                         ball.direction.Y = -ball.direction.Y;
-                        b.MarkForRemoval(true);
+
+                        if (b.OnHit() == false) // Case False: Means that block does not get destroyed(Color is GreyHi), change color to Grey
+                        {
+                            b.ChangeColor(BlockColor.Blue);
+                            b.LoadContent();
+                        }
+                        else
+                        {
+                            b.MarkForRemoval(true);
+                        }
                         continue;
                     }
                 }

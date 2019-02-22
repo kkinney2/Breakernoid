@@ -27,6 +27,35 @@ namespace BreakernoidsGL
 
         public Block(BlockColor bColor, Game myGame) : base(myGame)
         {
+            ChangeColor(bColor);
+
+            isMarkedForRemoval = false;
+        }
+
+        public bool IsMarkedForRemoval()
+        {
+            return isMarkedForRemoval;
+        }
+
+        public void MarkForRemoval(bool newMark)
+        {
+            isMarkedForRemoval = newMark;
+        }
+
+        public bool OnHit()
+        {
+            if(textureName == "block_grey_hi")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public void ChangeColor(BlockColor bColor)
+        {
             switch (bColor)
             {
                 case BlockColor.Red:
@@ -54,18 +83,6 @@ namespace BreakernoidsGL
                     textureName = "block_red";
                     break;
             }
-
-            isMarkedForRemoval = false;
-        }
-
-        public bool IsMarkedForRemoval()
-        {
-            return isMarkedForRemoval;
-        }
-
-        public void MarkForRemoval(bool newMark)
-        {
-            isMarkedForRemoval = newMark;
         }
     }
     
