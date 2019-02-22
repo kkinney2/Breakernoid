@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
 
 namespace BreakernoidsGL
 {
@@ -30,6 +31,9 @@ namespace BreakernoidsGL
             {3,3,3,3,3,3,3,3,3,3,3,3,3,3,3},
             {4,4,4,4,4,4,4,4,4,4,4,4,4,4,4},
         };
+        SoundEffect ballBounceSFX;
+        SoundEffect ballHitSFX;
+        SoundEffect deathSFX;
 
         public Game1()
         {
@@ -91,6 +95,10 @@ namespace BreakernoidsGL
                     blocks.Add(tempBlock);
                 }
             }
+
+            ballBounceSFX = Content.Load<SoundEffect>("ball_bounce");
+            ballHitSFX = Content.Load<SoundEffect>("ball_hit");
+            deathSFX = Content.Load<SoundEffect>("death");
 
         }
 
@@ -172,18 +180,20 @@ namespace BreakernoidsGL
                     }
 
                     // Center 1/3 of paddle
-                    else if (ball.position.X > (paddle.position.X - paddle.Width / 2 + paddle.Width / 3) &&        // Middle Left Bound
+                    if (ball.position.X > (paddle.position.X - paddle.Width / 2 + paddle.Width / 3) &&        // Middle Left Bound
                              ball.position.X < (paddle.position.X + paddle.Width / 2 - paddle.Width / 3))          // Middle Right Bound
                     {
                         ball.direction = Vector2.Reflect(ball.direction, new Vector2(0, -1));
                     }
 
                     // Left 1/3 of paddle
-                    else if (ball.position.X > paddle.position.X - paddle.Width / 2 &&                             // Left paddle bound
+                    if (ball.position.X > paddle.position.X - paddle.Width / 2 &&                             // Left paddle bound
                              ball.position.X < (paddle.position.X - paddle.Width / 2 + paddle.Width / 3))          // Left Inner Third
                     {
                         ball.direction = Vector2.Reflect(ball.direction, new Vector2(-0.196f, -0.981f));
                     }
+
+                    ballBounceSFX.Play();
                     collisionCount = 20;
                 }
             }
@@ -197,22 +207,26 @@ namespace BreakernoidsGL
             if (Math.Abs(ball.position.X - 32) < radius)
             {
                 // Left wall collision
+                ballBounceSFX.Play();
                 ball.direction.X = -ball.direction.X;
             }
             if (Math.Abs(ball.position.X - 992) < radius)
             {
                 // Right wall collision
                 ball.direction.X = -ball.direction.X;
+                ballBounceSFX.Play();
             }
             if( Math.Abs(ball.position.Y - 32) < radius)
             {
                 // Ceiling collision
                 ball.direction.Y = -ball.direction.Y;
+                ballBounceSFX.Play();
             }
             if (ball.position.Y > 768 + radius)
             {
                 // "Bottom Out"
                 LoseLife();
+                deathSFX.Play();
             }
 
 
@@ -224,12 +238,15 @@ namespace BreakernoidsGL
                     (ball.position.Y > (b.position.Y - b.Height / 2 - radius)) &&
                     (ball.position.Y < (b.position.Y + b.Height / 2 + radius)))
                 {
+                    ballBounceSFX.Play();
+                    ballHitSFX.Play();
+
                     if ((b.position.X - b.Width / 2) > ball.position.X)
                     {
                         // Left block side collision
                         ball.direction.X = -ball.direction.X;
-                        
-                        if(b.OnHit() == false) // Case False: Means that block does not get destroyed(Color is GreyHi), change color to Grey
+
+                        if (b.OnHit() == false) // Case False: Means that block does not get destroyed(Color is GreyHi), change color to Grey
                         {
                             b.ChangeColor(BlockColor.Blue);
                             b.LoadContent();
