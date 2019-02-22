@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace BreakernoidsGL
 {
-    public enum powerup
+    public enum PowerUpType
     {
         powerup_c= 0,
         powerup_b,
@@ -21,7 +21,7 @@ namespace BreakernoidsGL
     {
         public float speed = 350;
 
-        public PowerUp(Game myGame) : base(myGame)
+        public PowerUp(PowerUpType powerupType , Game myGame) : base(myGame)
         {
             
         }

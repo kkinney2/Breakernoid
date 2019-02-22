@@ -23,6 +23,7 @@ namespace BreakernoidsGL
         Ball ball;
         private int collisionCount = 0;
         List<Block> blocks = new List<Block>();
+        List<PowerUp> powerUps = new List<PowerUp>();
         int[,] blockLayout = new int[,]{
             {5,5,5,5,5,5,5,5,5,5,5,5,5,5,5},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -344,7 +345,10 @@ namespace BreakernoidsGL
 
         void SpawnPowerUp(Vector2 position)
         {
-
+            PowerUp tempPowerUp = new PowerUp((PowerUpType)random.Next(3), this);
+            tempPowerUp.LoadContent();
+            tempPowerUp.position = position;
+            powerUps.Add(tempPowerUp);
         }
         
     }
