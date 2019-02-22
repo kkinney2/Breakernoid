@@ -35,6 +35,9 @@ namespace BreakernoidsGL
         SoundEffect ballHitSFX;
         SoundEffect deathSFX;
 
+        Random random = new Random();
+        double probPowerUp = 0.2; // Which means that when you destroy a block, a power-up will spawn 20% of the time
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -327,9 +330,21 @@ namespace BreakernoidsGL
             {
                 if(blocks[b].IsMarkedForRemoval() == true)
                 {
+                    // Determines whether to spawn a powerup
+                    if (random.NextDouble() < probPowerUp)
+                    {
+                        // Spawns powerup
+                        SpawnPowerUp(blocks[b].position);
+                    }
+
                     blocks.Remove(blocks[b]);
                 }
             }
+        }
+
+        void SpawnPowerUp(Vector2 position)
+        {
+
         }
         
     }
