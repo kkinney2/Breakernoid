@@ -19,6 +19,8 @@ namespace BreakernoidsGL
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Texture2D bgTexture;
+        Texture2D puBTexture, puCTexture, puPTexture;
+
         Paddle paddle;
         Ball ball;
         private int collisionCount = 0;
@@ -72,6 +74,9 @@ namespace BreakernoidsGL
 
             // TODO: use this.Content to load your game content here
             bgTexture = Content.Load<Texture2D>("bg");
+            puBTexture = Content.Load<Texture2D>("powerup_b");
+            puCTexture = Content.Load<Texture2D>("powerup_c");
+            puPTexture = Content.Load<Texture2D>("powerup_p");
 
             paddle = new Paddle(this);
             paddle.LoadContent();
@@ -129,6 +134,7 @@ namespace BreakernoidsGL
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             paddle.Update(deltaTime);
             ball.Update(deltaTime);
+
             foreach (PowerUp pu in powerUps)
             {
                 pu.Update(deltaTime);
@@ -166,7 +172,7 @@ namespace BreakernoidsGL
 
             foreach (PowerUp pu in powerUps)
             {
-                pu.Draw(spriteBatch);
+                pu.Draw();
             }
 
             base.Draw(gameTime);
