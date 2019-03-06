@@ -186,6 +186,8 @@ namespace BreakernoidsGL
 
         protected void CheckCollisions()
         {
+            KeyboardState keyState = Keyboard.GetState();
+
             float radius = ball.Width / 2;
 
             // Paddle Collisions
@@ -199,7 +201,7 @@ namespace BreakernoidsGL
 
                 (ball.position.Y > (paddle.position.Y - radius - paddle.Height / 2))      )     // Top Check -- Pixel based game (0,0) is top left)
                 {
-                    if (isPuBActive)
+                    if (isPuBActive && ball.IsBallCaught() == false)
                     {
                         ball.ToggleBallCaught(); // Toggles to say ball is "caught" and to stop movement
                     }
@@ -223,6 +225,12 @@ namespace BreakernoidsGL
                              ball.position.X < (paddle.position.X - paddle.Width / 2 + paddle.Width / 3))          // Left Inner Third
                     {
                         ball.direction = Vector2.Reflect(ball.direction, new Vector2(-0.196f, -0.981f));
+                    }
+
+                    if(ball.IsBallCaught() == true && keyState.IsKeyDown(Keys.Space))
+                    {
+                        ball.ToggleBallCaught();
+                        isPuBActive = false;
                     }
 
                     ballBounceSFX.Play();
@@ -388,7 +396,7 @@ namespace BreakernoidsGL
 
                 if (puBR.Intersects(paddleBR))
                 {
-                    ActivatePowerUp();
+                    ActivatePowerUp(pu);
                     pu.MarkForRemoval(true);
                 }
             }
@@ -413,9 +421,24 @@ namespace BreakernoidsGL
             powerUps.Add(tempPowerUp);
         }
 
-        void ActivatePowerUp()
+        void ActivatePowerUp(PowerUp pu)
         {
             powerupSFX.Play();
+
+            switch (pu.GetPUType())
+            {
+                case "powerup_b":
+                    isPuBActive = true;
+                    break;
+                case "powerup_c":
+                    isPuCActive = true;
+                    break;
+                case "powerup_p":
+                    isPuPActive = true;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

@@ -21,11 +21,10 @@ namespace BreakernoidsGL
     {
         public float speed = 350;
         private bool isMarkedForRemoval;
-        PowerUpType puType;
 
-        public PowerUp(PowerUpType powerupType , Game myGame) : base(myGame)
+        public PowerUp(PowerUpType puType , Game myGame) : base(myGame)
         {
-            switch (powerupType)
+            switch (puType)
             {
                 case PowerUpType.powerup_c:
                     textureName = "powerup_c";
@@ -64,7 +63,11 @@ namespace BreakernoidsGL
         {
             isMarkedForRemoval = newMark;
         }
-    }
 
+        public string GetPUType()
+        {
+            return textureName;
+        }
+    }
 
 }

@@ -42,5 +42,10 @@ namespace BreakernoidsGL
         {
             isBallCaught = !isBallCaught;
         }
+
+        public bool IsBallCaught()
+        {
+            return isBallCaught;
+        }
     }
 }
