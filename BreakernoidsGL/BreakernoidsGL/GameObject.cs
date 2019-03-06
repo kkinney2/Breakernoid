@@ -56,5 +56,11 @@ namespace BreakernoidsGL
         {
             get { return texture.Height; }
         }
+
+        public Rectangle BoundingRect(float xVal, float yVal, float width, float height)
+        {
+            Rectangle tempRect = new Rectangle((int)xVal, (int)yVal, (int)width, (int)height);
+            return tempRect;
+        }
     }
 }

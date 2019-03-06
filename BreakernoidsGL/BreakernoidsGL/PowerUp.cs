@@ -25,9 +25,20 @@ namespace BreakernoidsGL
 
         public PowerUp(PowerUpType powerupType , Game myGame) : base(myGame)
         {
-            puType = powerupType;
-
-
+            switch (powerupType)
+            {
+                case PowerUpType.powerup_c:
+                    textureName = "powerup_c";
+                    break;
+                case PowerUpType.powerup_b:
+                    textureName = "powerup_b";
+                    break;
+                case PowerUpType.powerup_p:
+                    textureName = "powerup_p";
+                    break;
+                default:
+                    break;
+            }
         }
 
         public override void Update(float deltaTime)

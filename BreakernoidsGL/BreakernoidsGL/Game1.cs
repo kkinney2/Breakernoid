@@ -37,9 +37,13 @@ namespace BreakernoidsGL
         SoundEffect ballBounceSFX;
         SoundEffect ballHitSFX;
         SoundEffect deathSFX;
+        SoundEffect powerupSFX;
 
         Random random = new Random();
         double probPowerUp = 0.2; // Which means that when you destroy a block, a power-up will spawn 20% of the time
+        bool isPuBActive = false;
+        bool isPuCActive = false;
+        bool isPuPActive = false;
 
         public Game1()
         {
@@ -106,8 +110,9 @@ namespace BreakernoidsGL
             }
 
             ballBounceSFX = Content.Load<SoundEffect>("ball_bounce");
-            ballHitSFX = Content.Load<SoundEffect>("ball_hit");
-            deathSFX = Content.Load<SoundEffect>("death");
+            ballHitSFX    = Content.Load<SoundEffect>("ball_hit");
+            deathSFX      = Content.Load<SoundEffect>("death");
+            powerupSFX    = Content.Load<SoundEffect>("powerup");
 
         }
 
@@ -141,6 +146,7 @@ namespace BreakernoidsGL
             }
             
             CheckCollisions();
+            CheckForPowerups();
 
             RemoveBlocks();
             RemovePowerUps();
@@ -168,13 +174,13 @@ namespace BreakernoidsGL
             {
                 b.Draw(spriteBatch);
             }
-            spriteBatch.End();
 
             foreach (PowerUp pu in powerUps)
             {
-                pu.Draw();
+                pu.Draw(spriteBatch);
             }
 
+            spriteBatch.End();
             base.Draw(gameTime);
         }
 
@@ -193,6 +199,10 @@ namespace BreakernoidsGL
 
                 (ball.position.Y > (paddle.position.Y - radius - paddle.Height / 2))      )     // Top Check -- Pixel based game (0,0) is top left)
                 {
+                    if (isPuBActive)
+                    {
+                        ball.ToggleBallCaught(); // Toggles to say ball is "caught" and to stop movement
+                    }
                                                                                                                   // Paddle Bounds
                     // Right 1/3 of paddle
                     if (ball.position.X < (paddle.position.X + paddle.Width / 2) &&                               // Right paddle bound
@@ -340,11 +350,15 @@ namespace BreakernoidsGL
             paddle.ResetPosition();
             ball.position = new Vector2(paddle.position.X, paddle.position.Y - ball.Height - paddle.Height);
             ball.ResetDirection();
+
+            isPuBActive = false;
+            isPuCActive = false;
+            isPuPActive = false;
         }
 
         void RemoveBlocks()
         {
-            for (int b = blocks.Count-1; b > 0; b--)
+            for (int b = blocks.Count-1; b >= 0; b--)
             {
                 if(blocks[b].IsMarkedForRemoval() == true)
                 {
@@ -360,9 +374,29 @@ namespace BreakernoidsGL
             }
         }
 
+        void CheckForPowerups()
+        {
+            float xVal = paddle.position.X - (paddle.Width / 2);  // the x value of the top-left corner
+            float yVal = paddle.position.Y - (paddle.Height / 2); // the y value of the top-left corner
+            Rectangle paddleBR  = paddle.BoundingRect(xVal, yVal, paddle.Width, paddle.Height);
+
+            foreach (PowerUp pu in powerUps)
+            {
+                xVal = pu.position.X - (pu.Width / 2);  // the x value of the top-left corner
+                yVal = pu.position.Y - (pu.Height / 2); // the y value of the top-left corner
+                Rectangle puBR = pu.BoundingRect(xVal, yVal, paddle.Width, paddle.Height);
+
+                if (puBR.Intersects(paddleBR))
+                {
+                    ActivatePowerUp();
+                    pu.MarkForRemoval(true);
+                }
+            }
+        }
+
         void RemovePowerUps()
         {
-            for (int pu = powerUps.Count - 1; pu > 0; pu--)
+            for (int pu = powerUps.Count - 1; pu >= 0; pu--)
             {
                 if (powerUps[pu].IsMarkedForRemoval() == true)
                 {
@@ -378,6 +412,10 @@ namespace BreakernoidsGL
             tempPowerUp.position = position;
             powerUps.Add(tempPowerUp);
         }
-        
+
+        void ActivatePowerUp()
+        {
+            powerupSFX.Play();
+        }
     }
 }

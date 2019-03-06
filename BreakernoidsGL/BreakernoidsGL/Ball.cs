@@ -15,6 +15,8 @@ namespace BreakernoidsGL
         public float speed = 350;
         public Vector2 direction = new Vector2(0.707f, -0.707f);
 
+        bool isBallCaught = false;
+
         public Ball(Game myGame) : base(myGame)
         {
             textureName = "ball";
@@ -23,7 +25,10 @@ namespace BreakernoidsGL
 
         public override void Update(float deltaTime)
         {
-            position += direction * speed * deltaTime;
+            if (!isBallCaught)
+            {
+                position += direction * speed * deltaTime;
+            }
 
             base.Update(deltaTime);
         }
@@ -31,6 +36,11 @@ namespace BreakernoidsGL
         public void ResetDirection()
         {
             direction = new Vector2(0.707f, -0.707f);
+        }
+
+        public void ToggleBallCaught()
+        {
+            isBallCaught = !isBallCaught;
         }
     }
 }
