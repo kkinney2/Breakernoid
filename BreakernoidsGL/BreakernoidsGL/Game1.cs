@@ -44,6 +44,7 @@ namespace BreakernoidsGL
         bool isPuBActive = false;
         bool isPuCActive = false;
         bool isPuPActive = false;
+        Vector2 ballPosDisplaceTemp;
 
         public Game1()
         {
@@ -148,6 +149,8 @@ namespace BreakernoidsGL
             CheckCollisions();
             CheckForPowerups();
 
+            PowerUpBehaviors();
+
             RemoveBlocks();
             RemovePowerUps();
 
@@ -201,9 +204,10 @@ namespace BreakernoidsGL
 
                 (ball.position.Y > (paddle.position.Y - radius - paddle.Height / 2))      )     // Top Check -- Pixel based game (0,0) is top left)
                 {
-                    if (isPuBActive && ball.IsBallCaught() == false)
+                    if (isPuCActive && ball.IsBallCaught() == false)
                     {
                         ball.ToggleBallCaught(); // Toggles to say ball is "caught" and to stop movement
+                        ballPosDisplaceTemp = ball.position - paddle.position;
                     }
                                                                                                                   // Paddle Bounds
                     // Right 1/3 of paddle
@@ -227,12 +231,6 @@ namespace BreakernoidsGL
                         ball.direction = Vector2.Reflect(ball.direction, new Vector2(-0.196f, -0.981f));
                     }
 
-                    if(ball.IsBallCaught() == true && keyState.IsKeyDown(Keys.Space))
-                    {
-                        ball.ToggleBallCaught();
-                        isPuBActive = false;
-                    }
-
                     ballBounceSFX.Play();
                     collisionCount = 20;
                 }
@@ -244,17 +242,10 @@ namespace BreakernoidsGL
             }
 
             // Boundary Collisions
-            if (Math.Abs(ball.position.X - 32) < radius)
+            if (Math.Abs(ball.position.X - 32) < radius || Math.Abs(ball.position.X - 992) < radius) // Left wall || Right Wall
             {
-                // Left wall collision
                 ballBounceSFX.Play();
                 ball.direction.X = -ball.direction.X;
-            }
-            if (Math.Abs(ball.position.X - 992) < radius)
-            {
-                // Right wall collision
-                ball.direction.X = -ball.direction.X;
-                ballBounceSFX.Play();
             }
             if( Math.Abs(ball.position.Y - 32) < radius)
             {
@@ -281,74 +272,26 @@ namespace BreakernoidsGL
                     ballBounceSFX.Play();
                     ballHitSFX.Play();
 
-                    if ((b.position.X - b.Width / 2) > ball.position.X)
+                    if ((b.position.X - b.Width / 2) > ball.position.X || (b.position.X + b.Width / 2) < ball.position.X) // Left || Right
                     {
-                        // Left block side collision
                         ball.direction.X = -ball.direction.X;
-
-                        if (b.OnHit() == false) // Case False: Means that block does not get destroyed(Color is GreyHi), change color to Grey
-                        {
-                            b.ChangeColor(BlockColor.Grey);
-                            b.LoadContent();
-                        }
-                        else
-                        {
-                            b.MarkForRemoval(true);
-                        }
-                        continue;
                     }
 
-
-                    if ((b.position.X + b.Width / 2) < ball.position.X)
+                    if ((b.position.Y + b.Height / 2) < ball.position.Y || (b.position.Y - b.Height / 2) > ball.position.Y) // Top || Bottom
                     {
-                        // Right block side collision
-                        ball.direction.X = -ball.direction.X;
-
-                        if (b.OnHit() == false) // Case False: Means that block does not get destroyed(Color is GreyHi), change color to Grey
-                        {
-                            b.ChangeColor(BlockColor.Grey);
-                            b.LoadContent();
-                        }
-                        else
-                        {
-                            b.MarkForRemoval(true);
-                        }
-                        continue;
-                    }
-
-                    if ((b.position.Y + b.Height / 2) < ball.position.Y)
-                    {
-                        // Top block side collision
                         ball.direction.Y = -ball.direction.Y;
-
-                        if (b.OnHit() == false) // Case False: Means that block does not get destroyed(Color is GreyHi), change color to Grey
-                        {
-                            b.ChangeColor(BlockColor.Grey);
-                            b.LoadContent();
-                        }
-                        else
-                        {
-                            b.MarkForRemoval(true);
-                        }
-                        continue;
                     }
 
-                    if ((b.position.Y - b.Height / 2) > ball.position.Y)
+                    if (b.OnHit() == false) // Case False: Means that block does not get destroyed(Color is GreyHi), change color to Grey
                     {
-                        // Bottom block side collision
-                        ball.direction.Y = -ball.direction.Y;
-
-                        if (b.OnHit() == false) // Case False: Means that block does not get destroyed(Color is GreyHi), change color to Grey
-                        {
-                            b.ChangeColor(BlockColor.Grey);
-                            b.LoadContent();
-                        }
-                        else
-                        {
-                            b.MarkForRemoval(true);
-                        }
-                        continue;
+                        b.ChangeColor(BlockColor.Grey);
+                        b.LoadContent();
                     }
+                    else
+                    {
+                        b.MarkForRemoval(true);
+                    }
+                    continue;
                 }
             }
         }
@@ -438,6 +381,35 @@ namespace BreakernoidsGL
                     break;
                 default:
                     break;
+            }
+        }
+
+        void PowerUpBehaviors()
+        {
+            KeyboardState keyState = Keyboard.GetState();
+
+            if (isPuCActive) // Line ~207 for ball catch check
+            {
+                if (ball.IsBallCaught() == true)
+                {
+                    ball.position = new Vector2(paddle.position.X + ballPosDisplaceTemp.X, ball.position.Y);
+
+                    if (keyState.IsKeyDown(Keys.Space))
+                    {
+                        ball.ToggleBallCaught();
+                        isPuBActive = false;
+                    }
+                }
+            }
+
+            if (isPuBActive)
+            {
+
+            }
+
+            if (isPuPActive)
+            {
+
             }
         }
     }
