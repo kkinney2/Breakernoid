@@ -22,8 +22,8 @@ namespace BreakernoidsGL
         Texture2D puBTexture, puCTexture, puPTexture;
 
         Paddle paddle;
-        Ball ball;
         private int collisionCount = 0;
+        List<Ball> balls = new List<Ball>();
         List<Block> blocks = new List<Block>();
         List<PowerUp> powerUps = new List<PowerUp>();
         int[,] blockLayout = new int[,]{
@@ -87,9 +87,7 @@ namespace BreakernoidsGL
             paddle.LoadContent();
             paddle.position = new Vector2(512, 740);
 
-            ball = new Ball(this);
-            ball.LoadContent();
-            ball.position = new Vector2(512, 740);
+            SpawnBall();
 
             /*for (int i = 0; i < 15; i++)
             {
@@ -139,18 +137,23 @@ namespace BreakernoidsGL
             // TODO: Add your update logic here
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             paddle.Update(deltaTime);
-            ball.Update(deltaTime);
+
+            foreach (Ball b in balls)
+            {
+                b.Update(deltaTime);
+                CheckCollisions(b);
+            }
 
             foreach (PowerUp pu in powerUps)
             {
                 pu.Update(deltaTime);
             }
             
-            CheckCollisions();
             CheckForPowerups();
 
             PowerUpBehaviors();
 
+            RemoveBalls();
             RemoveBlocks();
             RemovePowerUps();
 
@@ -172,7 +175,12 @@ namespace BreakernoidsGL
             // Draw all sprites 
             spriteBatch.Draw(bgTexture, new Vector2(0, 0), Color.White);
             paddle.Draw(spriteBatch);
-            ball.Draw(spriteBatch);
+            
+            foreach (Ball b in balls)
+            {
+                b.Draw(spriteBatch);
+            }
+
             foreach (Block b in blocks)
             {
                 b.Draw(spriteBatch);
@@ -187,7 +195,7 @@ namespace BreakernoidsGL
             base.Draw(gameTime);
         }
 
-        protected void CheckCollisions()
+        void CheckCollisions(Ball ball)
         {
             KeyboardState keyState = Keyboard.GetState();
 
@@ -253,11 +261,10 @@ namespace BreakernoidsGL
                 ball.direction.Y = -ball.direction.Y;
                 ballBounceSFX.Play();
             }
+
             if (ball.position.Y > 768 + radius)
             {
-                // "Bottom Out"
-                LoseLife();
-                deathSFX.Play();
+                ball.MarkForRemoval(true);
             }
 
 
@@ -298,9 +305,11 @@ namespace BreakernoidsGL
 
         void LoseLife()
         {
+            deathSFX.Play();
             paddle.ResetPosition();
-            ball.position = new Vector2(paddle.position.X, paddle.position.Y - ball.Height - paddle.Height);
-            ball.ResetDirection();
+            paddle.SetIsPoweredUp(false);
+            paddle.LoadContent();
+            SpawnBall();
 
             isPuBActive = false;
             isPuCActive = false;
@@ -309,9 +318,9 @@ namespace BreakernoidsGL
 
         void RemoveBlocks()
         {
-            for (int b = blocks.Count-1; b >= 0; b--)
+            for (int b = blocks.Count - 1; b > 0; b--)
             {
-                if(blocks[b].IsMarkedForRemoval() == true)
+                if (blocks[b].IsMarkedForRemoval() == true)
                 {
                     // Determines whether to spawn a powerup
                     if (random.NextDouble() < probPowerUp)
@@ -325,11 +334,27 @@ namespace BreakernoidsGL
             }
         }
 
+        void RemoveBalls()
+        {
+            for (int b = balls.Count - 1; b >= 0; b--)
+            {
+                if (balls[b].IsMarkedForRemoval() == true)
+                {
+                    balls.Remove(balls[b]);
+                }
+            }
+
+            if (balls.Count == 0)
+            {
+                LoseLife();
+            }
+        }
+
         void CheckForPowerups()
         {
             float xVal = paddle.position.X - (paddle.Width / 2);  // the x value of the top-left corner
             float yVal = paddle.position.Y - (paddle.Height / 2); // the y value of the top-left corner
-            Rectangle paddleBR  = paddle.BoundingRect(xVal, yVal, paddle.Width, paddle.Height);
+            Rectangle paddleBR = paddle.BoundingRect(xVal, yVal, paddle.Width, paddle.Height);
 
             foreach (PowerUp pu in powerUps)
             {
@@ -354,6 +379,14 @@ namespace BreakernoidsGL
                     powerUps.Remove(powerUps[pu]);
                 }
             }
+        }
+
+        void SpawnBall()
+        {
+            Ball ball = new Ball(this);
+            ball.LoadContent();
+            ball.position = new Vector2(paddle.position.X, paddle.position.Y - ball.Height - paddle.Height);
+            balls.Add(ball);
         }
 
         void SpawnPowerUp(Vector2 position)
@@ -390,26 +423,31 @@ namespace BreakernoidsGL
 
             if (isPuCActive) // Line ~207 for ball catch check
             {
-                if (ball.IsBallCaught() == true)
+                foreach (Ball ball in balls)
                 {
-                    ball.position = new Vector2(paddle.position.X + ballPosDisplaceTemp.X, ball.position.Y);
-
-                    if (keyState.IsKeyDown(Keys.Space))
+                    if (ball.IsBallCaught() == true)
                     {
-                        ball.ToggleBallCaught();
-                        isPuBActive = false;
+                        ball.position = new Vector2(paddle.position.X + ballPosDisplaceTemp.X, ball.position.Y);
+
+                        if (keyState.IsKeyDown(Keys.Space))
+                        {
+                            ball.ToggleBallCaught();
+                            isPuCActive = false;
+                        }
                     }
                 }
             }
 
             if (isPuBActive)
             {
-
+                SpawnBall();
+                isPuBActive = false;
             }
 
             if (isPuPActive)
             {
-
+                paddle.SetIsPoweredUp(true);
+                paddle.LoadContent();
             }
         }
     }

@@ -13,10 +13,12 @@ namespace BreakernoidsGL
     public class Paddle : GameObject
     {
         public float speed = 500;
+        bool isPoweredUp;
 
         public Paddle(Game myGame) : base(myGame)
         {
             textureName = "paddle";
+            isPoweredUp = false;
         }
 
         public override void Update(float deltaTime)
@@ -39,12 +41,26 @@ namespace BreakernoidsGL
                     992 - texture.Width / 2
                 );
 
+            if (isPoweredUp)
+            {
+                textureName = "paddle_long";
+            }
+            else
+            {
+                textureName = "paddle";
+            }
+
             base.Update(deltaTime);
         }
 
         public void ResetPosition()
         {
             position = new Vector2(512, 740);
+        }
+
+        public void SetIsPoweredUp(bool newBool)
+        {
+            isPoweredUp = newBool;
         }
     }
 }

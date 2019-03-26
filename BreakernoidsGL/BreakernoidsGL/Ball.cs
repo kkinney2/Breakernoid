@@ -16,11 +16,11 @@ namespace BreakernoidsGL
         public Vector2 direction = new Vector2(0.707f, -0.707f);
 
         bool isBallCaught = false;
+        bool isMarkedForRemoval = false;
 
         public Ball(Game myGame) : base(myGame)
         {
             textureName = "ball";
-
         }
 
         public override void Update(float deltaTime)
@@ -46,6 +46,16 @@ namespace BreakernoidsGL
         public bool IsBallCaught()
         {
             return isBallCaught;
+        }
+
+        public bool IsMarkedForRemoval()
+        {
+            return isMarkedForRemoval;
+        }
+
+        public void MarkForRemoval(bool newMark)
+        {
+            isMarkedForRemoval = newMark;
         }
     }
 }
