@@ -263,3 +263,8 @@ B:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\obj\Debug\BreakernoidsGL.cspr
 B:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\obj\Debug\BreakernoidsGL.csproj.CopyComplete
 B:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\obj\Debug\BreakernoidsGL.exe
 B:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\obj\Debug\BreakernoidsGL.pdb
+B:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Levels\Level1.xml
+B:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Levels\Level2.xml
+B:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Levels\Level3.xml
+B:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Levels\Level4.xml
+B:\Unity\Breakernoid\BreakernoidsGL\BreakernoidsGL\bin\DesktopGL\AnyCPU\Debug\Levels\Level5.xml

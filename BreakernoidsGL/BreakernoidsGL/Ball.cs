@@ -12,7 +12,7 @@ namespace BreakernoidsGL
 {
     class Ball : GameObject
     {
-        public float speed = 350;
+        public float speed = 1;
         public Vector2 direction = new Vector2(0.707f, -0.707f);
 
         bool isBallCaught = false;
@@ -56,6 +56,11 @@ namespace BreakernoidsGL
         public void MarkForRemoval(bool newMark)
         {
             isMarkedForRemoval = newMark;
+        }
+
+        public void SetBallSpeed(float newSpeed)
+        {
+            speed = newSpeed;
         }
     }
 }

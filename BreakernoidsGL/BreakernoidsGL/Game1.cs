@@ -8,6 +8,8 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Audio;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace BreakernoidsGL
 {
@@ -22,18 +24,12 @@ namespace BreakernoidsGL
         Texture2D puBTexture, puCTexture, puPTexture;
 
         Paddle paddle;
+        Level level;
         private int collisionCount = 0;
         List<Ball> balls = new List<Ball>();
         List<Block> blocks = new List<Block>();
         List<PowerUp> powerUps = new List<PowerUp>();
-        int[,] blockLayout = new int[,]{
-            {5,5,5,5,5,5,5,5,5,5,5,5,5,5,5},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
-            {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2},
-            {3,3,3,3,3,3,3,3,3,3,3,3,3,3,3},
-            {4,4,4,4,4,4,4,4,4,4,4,4,4,4,4},
-        };
+
         SoundEffect ballBounceSFX;
         SoundEffect ballHitSFX;
         SoundEffect deathSFX;
@@ -41,6 +37,8 @@ namespace BreakernoidsGL
 
         Random random = new Random();
         double probPowerUp = 0.2; // Which means that when you destroy a block, a power-up will spawn 20% of the time
+        float speedMult = 0;
+        int levelNum = 1;
         bool isPuBActive = false;
         bool isPuCActive = false;
         bool isPuPActive = false;
@@ -83,21 +81,16 @@ namespace BreakernoidsGL
             puCTexture = Content.Load<Texture2D>("powerup_c");
             puPTexture = Content.Load<Texture2D>("powerup_p");
 
+            LoadLevel("Level5.xml");
+
             paddle = new Paddle(this);
             paddle.LoadContent();
             paddle.position = new Vector2(512, 740);
 
             SpawnBall();
 
-            /*for (int i = 0; i < 15; i++)
-            {
-                Block tempBlock = new Block(BlockColor.Purple, this);
-                tempBlock.LoadContent();
-                tempBlock.position = new Vector2(64 + i * 64, 200);
-                blocks.Add(tempBlock);
-            }*/
 
-            for (int row = 0; row < blockLayout.GetLength(0); row++)
+            /*for (int row = 0; row < blockLayout.GetLength(0); row++)
             {
                 for (int col = 0; col < blockLayout.GetLength(1) ; col++)
                 {
@@ -106,12 +99,12 @@ namespace BreakernoidsGL
                     tempBlock.position = new Vector2(64 + col * 64, 100 + row * 32);
                     blocks.Add(tempBlock);
                 }
-            }
+            }*/
 
             ballBounceSFX = Content.Load<SoundEffect>("ball_bounce");
-            ballHitSFX    = Content.Load<SoundEffect>("ball_hit");
-            deathSFX      = Content.Load<SoundEffect>("death");
-            powerupSFX    = Content.Load<SoundEffect>("powerup");
+            ballHitSFX = Content.Load<SoundEffect>("ball_hit");
+            deathSFX = Content.Load<SoundEffect>("death");
+            powerupSFX = Content.Load<SoundEffect>("powerup");
 
         }
 
@@ -148,7 +141,7 @@ namespace BreakernoidsGL
             {
                 pu.Update(deltaTime);
             }
-            
+
             CheckForPowerups();
 
             PowerUpBehaviors();
@@ -156,6 +149,16 @@ namespace BreakernoidsGL
             RemoveBalls();
             RemoveBlocks();
             RemovePowerUps();
+
+            if (balls.Count == 0)
+            {
+                LoseLife();
+            }
+
+            if (blocks.Count == 0)
+            {
+                NextLevel();
+            }
 
             base.Update(gameTime);
         }
@@ -175,15 +178,15 @@ namespace BreakernoidsGL
             // Draw all sprites 
             spriteBatch.Draw(bgTexture, new Vector2(0, 0), Color.White);
             paddle.Draw(spriteBatch);
-            
+
             foreach (Ball b in balls)
             {
                 b.Draw(spriteBatch);
             }
 
-            foreach (Block b in blocks)
+            foreach (Block bl in blocks)
             {
-                b.Draw(spriteBatch);
+                bl.Draw(spriteBatch);
             }
 
             foreach (PowerUp pu in powerUps)
@@ -206,18 +209,18 @@ namespace BreakernoidsGL
             {
                 if ((ball.position.X > (paddle.position.X - radius - paddle.Width / 2)) &&      // Left Check
 
-                (ball.position.X < (paddle.position.X + radius + paddle.Width / 2))     &&      // Right Check
+                (ball.position.X < (paddle.position.X + radius + paddle.Width / 2)) &&      // Right Check
 
-                (ball.position.Y < paddle.position.Y + radius + paddle.Height / 2)      &&      // Bottom Check
+                (ball.position.Y < paddle.position.Y + radius + paddle.Height / 2) &&      // Bottom Check
 
-                (ball.position.Y > (paddle.position.Y - radius - paddle.Height / 2))      )     // Top Check -- Pixel based game (0,0) is top left)
+                (ball.position.Y > (paddle.position.Y - radius - paddle.Height / 2)))     // Top Check -- Pixel based game (0,0) is top left)
                 {
                     if (isPuCActive && ball.IsBallCaught() == false)
                     {
                         ball.ToggleBallCaught(); // Toggles to say ball is "caught" and to stop movement
                         ballPosDisplaceTemp = ball.position - paddle.position;
                     }
-                                                                                                                  // Paddle Bounds
+                    // Paddle Bounds
                     // Right 1/3 of paddle
                     if (ball.position.X < (paddle.position.X + paddle.Width / 2) &&                               // Right paddle bound
                         ball.position.X > (paddle.position.X + paddle.Width / 2 - paddle.Width / 3))              // Right Inner Third
@@ -255,7 +258,7 @@ namespace BreakernoidsGL
                 ballBounceSFX.Play();
                 ball.direction.X = -ball.direction.X;
             }
-            if( Math.Abs(ball.position.Y - 32) < radius)
+            if (Math.Abs(ball.position.Y - 32) < radius)
             {
                 // Ceiling collision
                 ball.direction.Y = -ball.direction.Y;
@@ -343,11 +346,6 @@ namespace BreakernoidsGL
                     balls.Remove(balls[b]);
                 }
             }
-
-            if (balls.Count == 0)
-            {
-                LoseLife();
-            }
         }
 
         void CheckForPowerups()
@@ -385,7 +383,8 @@ namespace BreakernoidsGL
         {
             Ball ball = new Ball(this);
             ball.LoadContent();
-            ball.position = new Vector2(paddle.position.X, paddle.position.Y - ball.Height - paddle.Height);
+            ball.position = new Vector2(512, 740);
+            ball.SetBallSpeed(level.ballSpeed * 100f * speedMult);
             balls.Add(ball);
         }
 
@@ -449,6 +448,54 @@ namespace BreakernoidsGL
                 paddle.SetIsPoweredUp(true);
                 paddle.LoadContent();
             }
+        }
+
+        protected void LoadLevel(string levelName)
+        {
+            using (FileStream fs = File.OpenRead("Levels/" + levelName))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(Level));
+                level = (Level)serializer.Deserialize(fs);
+            }
+
+            // TODO: Generate blocks based on level.layout array
+            for (int row = 0; row < level.layout.Length; row++)
+            {
+                for (int col = 0; col < level.layout[row].Length; col++)
+                {
+                    BlockColor newColor = (BlockColor)level.layout[row][col];
+                    if (level.layout[row][col] == 9)
+                    {
+                        continue;
+                    }
+                    Block tempBlock = new Block(newColor, this);
+                    tempBlock.LoadContent();
+                    tempBlock.position = new Vector2(64 + col * 64, 100 + row * 32);
+                    blocks.Add(tempBlock);
+                }
+            }
+            speedMult = levelNum--; // Ball speed multiplier
+            level.nextLevel = "Level" + (levelNum > 5 ? levelNum%5 : levelNum) + ".xml"; // if levelNum > 5 then return levelNum mod 5 else return levelnum
+        }
+
+        void NextLevel()
+        {
+            foreach(Ball b in balls)
+            {
+                b.MarkForRemoval(true);
+            }
+
+            paddle.ResetPosition();
+            paddle.SetIsPoweredUp(false);
+            paddle.LoadContent();
+            SpawnBall();
+
+            isPuBActive = false;
+            isPuCActive = false;
+            isPuPActive = false;
+
+            levelNum++;
+            LoadLevel(level.nextLevel);
         }
     }
 }
