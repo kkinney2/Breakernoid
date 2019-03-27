@@ -38,6 +38,7 @@ namespace BreakernoidsGL
         Random random = new Random();
         double probPowerUp = 0.2; // Which means that when you destroy a block, a power-up will spawn 20% of the time
         float speedMult = 0;
+        float score;
         int levelNum = 1;
         bool isPuBActive = false;
         bool isPuCActive = false;
@@ -81,7 +82,7 @@ namespace BreakernoidsGL
             puCTexture = Content.Load<Texture2D>("powerup_c");
             puPTexture = Content.Load<Texture2D>("powerup_p");
 
-            LoadLevel("Level5.xml");
+            LoadLevel("Level1.xml");
 
             paddle = new Paddle(this);
             paddle.LoadContent();
@@ -300,6 +301,7 @@ namespace BreakernoidsGL
                     else
                     {
                         b.MarkForRemoval(true);
+                        AddScore("block");
                     }
                     continue;
                 }
@@ -364,6 +366,7 @@ namespace BreakernoidsGL
                 {
                     ActivatePowerUp(pu);
                     pu.MarkForRemoval(true);
+                    AddScore("powerup");
                 }
             }
         }
@@ -480,7 +483,8 @@ namespace BreakernoidsGL
 
         void NextLevel()
         {
-            foreach(Ball b in balls)
+            AddScore("level");
+            foreach (Ball b in balls)
             {
                 b.MarkForRemoval(true);
             }
@@ -496,6 +500,27 @@ namespace BreakernoidsGL
 
             levelNum++;
             LoadLevel(level.nextLevel);
+        }
+
+        void AddScore(string itemType)
+        {
+            switch (itemType)
+            {
+                case "block":
+                    score += 100 + 100 * speedMult;
+                    break;
+
+                case "powerup":
+                    score += 500 + 500 * speedMult;
+                    break;
+
+                case "level":
+                    score += 5000 + 5000 * speedMult + 500 * (balls.Count - 1) * speedMult;
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }
